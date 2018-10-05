@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" class='swiper'>
+    <swiper :options="swiperOption" class='swiper' v-if='loadlist'>
       <!-- slides -->
       <swiper-slide v-for='item of swiperList' :key='item.id'>
         <img class='swiper-img' :src='item.imgUrl' alt=''>
@@ -14,25 +14,21 @@
 <script>
 export default{
   name: 'HomeSwiper',
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1809/c6/2467595fffc3b302.jpg_750x200_cca13d51.jpg'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1809/69/8697f10f17f35a02.jpg_750x200_c98193a9.jpg'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1809/3b/7b654a05c9b61e02.jpg_750x200_eb04c4da.jpg'
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1809/12/856f100069809e02.jpg_750x200_e3485a2b.jpg'
-      }]
+      }
+    }
+  },
+  computed: {
+    loadlist () {
+      // console.log('两次获取 swiperList', this.swiperList.length)
+      return this.swiperList.length
     }
   }
 }

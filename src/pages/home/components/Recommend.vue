@@ -15,25 +15,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/c5/c5e2b211d10d4bb90.img.jpg_200x200_2a971b62.jpg',
-        title: '西溪国家湿地公园',
-        desc: '千岛湖天迹热气球球气热迹天湖岛千'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/c6/c6596631d2c78cda.water.jpg_200x200_4c3a7a9a.jpg',
-        title: '千岛湖夜游',
-        desc: '千岛湖夜游游夜湖岛千'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/ae/aecef86d7655873f90.water.jpg_200x200_22a0790e.jpg',
-        title: '杭州野生动物世界',
-        desc: '杭州野生动物世界界世物动生野州杭'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
