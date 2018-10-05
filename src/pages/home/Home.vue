@@ -6,7 +6,6 @@
         <home-icons :iconList='iconList'></home-icons>
         <home-recommend :recommendList='recommendList'></home-recommend>
         <home-weekend :weekendList='weekendList'></home-weekend>
-        <div>this is Home</div>
     </div>
   </div>
 </template>
@@ -47,7 +46,7 @@ export default {
       res = res.data
       if (res.ret) {
         const data = res.data
-        console.log('获取index.json: ', data)
+        // console.log('获取index.json: ', data)
         this.selCity = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
